@@ -15,6 +15,15 @@ function generatePassword() {
   var upperCases = confirm("Do you want uppercases in your password?");
   var special = confirm("Do you want special characters in your password?");
 
+  // To ensure at least one is picked
+  while (!numbers && !lowerCases && !upperCases && !special) {
+    alert("You must select at least one character type!");
+    numbers = confirm("Do you want numbers in your password?");
+    lowerCases = confirm("Do you want lowercases in your password?");
+    upperCases = confirm("Do you want uppercases in your password?");
+    special = confirm("Do you want special characters in your password?");
+  }
+
   // this is a minimum count for numbers, lowerCases, upperCases & specialCharacters
   var minimumCount = 0;
 
